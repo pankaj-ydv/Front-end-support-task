@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Document</title>
+</head>
+<Style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff;
+}
+.container {
+    width: 350px;
+    margin: auto;
+    padding: 20px;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.header-container::before,
+.header-container::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+    margin: 0 10px;
+}
+h2 {
+    color: #ff4081;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.offer-box {
+    border: 2px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.offer-box input {
+    margin-right: 10px;
+}
+.selected {
+    border-color: #ff4081;
+    background-color: #ffe6f0;
+}
+.most-popular::before {
+    content: "MOST POPULAR";
+    position: absolute;
+    top: -12px;
+    right: 10px;
+    background-color: #ff4081;
+    color: #fff;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.discount-badge {
+    background-color: #ff4081;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+.price-standard {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    left: 223px;
+    bottom: 53px;
+}
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    left: 223px;
+    bottom: 38px;
+}
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    position: relative;
+    top: 24px;
+    right: 104px;
+    font-size: 13px;
+}
+.standard-text{
+    margin-left:34px; 
+    font-size:12px;
+    color: #0c0b0b;
+    display: inline-block;
+}
+.selection-row {
+    display: none;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+.selected .selection-row {
+    display: flex;
+}
+select {
+    padding: 5px;
+    width: 48%;
+}
+.heading {
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+    position: absolute;
+    bottom: 32px;
+    left: 18px;
+}
+.heading-2 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+    position: absolute;
+    bottom: 32px;
+    left: 199px;
+}
+.add-to-cart {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.footer-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+}
+.free-delivery {
+    color: red;
+}
+.total-price {
+    font-size: 18px;
+}
+</Style>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h2>YAY! It's BOGO</h2>
+        </div>
+        
+        <div class="offer-box selected" onclick="selectOffer(this, 10)">
+            <div>
+                <input type="radio" name="offer" value="1">
+                <label>1 Unit <span class="discount-badge">10% Off</span></label>
+                <br>
+           <span class="standard-text">Standard price</span>
+            </div>
+            <p class="price-standard">$10.00 USD <span class="old-price">$24.00 USD</span></p>
+            
+            <div class="selection-row">
+                <label class="heading">Size</label>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <label class="heading-2">Color</label>
+                <select><option>Black</option><option>White</option><option>Red</option></select>
+            </div>
+        </div>
+
+        <div class="offer-box most-popular" onclick="selectOffer(this, 18)">
+            <div>
+                <input type="radio" name="offer" value="2">
+                <label>2 Unit <span class="discount-badge">20% Off</span></label>
+            </div>
+            <p class="price">$18.00 USD <span class="old-price">$24.00 USD</span></p>
+            <div class="selection-row">
+                <label class="heading">Size</label>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <label class="heading-2">Color</label>
+                <select><option>Black</option><option>White</option><option>Red</option></select>
+            </div>
+          
+        </div>
+
+        <div class="offer-box" onclick="selectOffer(this, 24)">
+            <div>
+                <input type="radio" name="offer" value="3">
+                <label>3 Unit <span class="discount-badge">30% Off</span></label>
+            </div>
+            <p class="price">$24.00 USD <span class="old-price">$24.00 USD</span></p>
+            <div class="selection-row">
+                <label class="heading">Size</label>
+                <select><option>S</option><option>M</option><option>L</option></select>
+                <label class="heading-2">Color</label>
+                <select><option>Black</option><option>White</option><option>Red</option></select>
+            </div>
+        </div>
+
+        <div class="footer-details">
+            <p class="free-delivery">Free Delivery</p>
+            <p class="total-price">Total: <span id="total-price">$10.00 USD</span></p>
+        </div>
+        
+        <button class="add-to-cart">+ Add to Cart</button>
+    </div>
+</body>
+<script >
+    function selectOffer(selectedDiv, price) {
+    document.querySelectorAll(".offer-box").forEach(div => {
+        div.classList.remove("selected");
+    });
+    selectedDiv.classList.add("selected");
+    document.getElementById("total-price").innerText = "$" + price + " USD";
+}
+</script>
+</html>
